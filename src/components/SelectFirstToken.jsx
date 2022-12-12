@@ -12,6 +12,7 @@ const SelectFirstToken = ({ token }) => {
           type="number"
           placeholder="0"
           className="text-2xl placeholder-gray-600 bg-app-dark-hover outline-none text-gray-600 w-1/2"
+          min="0"
         />
         <div
           className="flex gap-1 py-2 px-4 hover:cursor-pointer bg-app bg-app-dark-tokenSelect rounded-full"

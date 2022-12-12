@@ -25,6 +25,7 @@ const Proposal = () => {
                 type="number"
                 className="text-gray-500 outline-none text-lg w-full rounded-md px-2 py-1 bg-app-dark-tokenSelect placeholder-gray-500"
                 placeholder="1"
+                min="0"
               />
             </div>
             <div className="flex gap-2 w-1/2 items-center">
@@ -38,38 +39,23 @@ const Proposal = () => {
                 type="number"
                 className="text-gray-500 outline-none text-lg w-full rounded-md px-2 py-1 bg-app-dark-tokenSelect placeholder-gray-500"
                 placeholder="1"
+                min="0"
               />
             </div>
           </div>
-          <div className="bg-app-dark-hover flex justify-between rounded-xl px-3 py-4 gap-4">
-            <div className="flex gap-2 w-1/3 items-center">
-              <h3 className="text-gray-500 text-lg">M</h3>
-              <input
-                type="number"
-                className="text-gray-500 outline-none text-lg w-full rounded-md px-2 py-1 bg-app-dark-tokenSelect placeholder-gray-500"
-                max={12}
-                placeholder="1"
-              />
-            </div>
-            <div className="flex gap-2 w-1/3 items-center">
-              <h3 className="text-gray-500 text-lg">D</h3>
-              <input
-                type="number"
-                className="text-gray-500 outline-none text-lg w-full rounded-md px-2 py-1 bg-app-dark-tokenSelect placeholder-gray-500"
-                placeholder="1"
-                max={31}
-              />
-            </div>
-            <div className="flex gap-2 w-1/3 items-center">
-              <h3 className="text-gray-500 text-lg">Y</h3>
-              <input
-                type="number"
-                className="text-gray-500 outline-none text-lg w-full rounded-md px-2 py-1 bg-app-dark-tokenSelect placeholder-gray-500"
-                placeholder="1"
-              />
-            </div>
+          <div className="bg-app-dark-hover flex justify-between rounded-xl px-3 py-4 gap-4 items-center">
+            <h4 className="text-xl text-gray-400">Duration</h4>
+            <input
+              type="number"
+              className="text-gray-500 outline-none text-lg w-1/2 rounded-md px-3 py-1 bg-app-dark-tokenSelect placeholder-gray-500"
+              placeholder="1"
+              min="0"
+
+            />
           </div>
-          <div className="bg-app-dark-button flex justify-center w-full font-semibold text-xl py-5 rounded-full text-app-dark-button hover:cursor-pointer active:bg-violet-700 active:text-violet-400">Send Proposal</div>
+          <div className="bg-app-dark-button flex justify-center w-full font-semibold text-xl py-5 rounded-full text-app-dark-button hover:cursor-pointer active:bg-violet-700 active:text-violet-400">
+            Send Proposal
+          </div>
         </div>
       </div>
     </div>

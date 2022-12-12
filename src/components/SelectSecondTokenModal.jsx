@@ -78,7 +78,7 @@ const SelectSecondTokenModal = ({ showModal, setShowModal }) => {
                   {coinDatas.map((coinData, idx) => {
                     return (
                       <div
-                        className="flex gap-5"
+                        className="flex gap-5 hover:cursor-pointer"
                         onClick={() => {
                           context.setSecondToken(idx);
                           setShowModal(false);

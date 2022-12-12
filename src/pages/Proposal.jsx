@@ -10,11 +10,11 @@ const Proposal = () => {
     <div className="flex justify-center py-24">
       <div className="bg-app-dark-swap flex flex-col px-2 py-3 w-96 border-1 border-app-dark rounded-2xl">
         <h2 className="mb-3 text-xl px-3">Swap</h2>
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-5">
           <SelectFirstToken token={context.firstToken} />
           <SelectSecondToken token={context.secondToken} />
-          <div className="bg-app-dark-hover flex justify-between rounded-xl">
-            <div className="flex gap-1 w-1/2">
+          <div className="bg-app-dark-hover flex justify-between rounded-xl px-3 py-4 gap-4">
+            <div className="flex gap-2 w-1/2 items-center">
               <img
                 className="w-8 h-8"
                 src={coinDatas[context.firstToken].image}
@@ -23,11 +23,11 @@ const Proposal = () => {
               />
               <input
                 type="number"
-                className="text-gray-500 outline-none text-lg w-full bg-app-dark-tokenSelect placeholder-gray-500"
+                className="text-gray-500 outline-none text-lg w-full rounded-md px-2 py-1 bg-app-dark-tokenSelect placeholder-gray-500"
                 placeholder="1"
               />
             </div>
-            <div className="flex gap-1 w-1/2">
+            <div className="flex gap-2 w-1/2 items-center">
               <img
                 className="w-8 h-8"
                 src={coinDatas[context.secondToken].image}
@@ -36,11 +36,40 @@ const Proposal = () => {
               />
               <input
                 type="number"
-                className="text-gray-500 outline-none text-lg w-full bg-app-dark-tokenSelect placeholder-gray-500"
+                className="text-gray-500 outline-none text-lg w-full rounded-md px-2 py-1 bg-app-dark-tokenSelect placeholder-gray-500"
                 placeholder="1"
               />
             </div>
           </div>
+          <div className="bg-app-dark-hover flex justify-between rounded-xl px-3 py-4 gap-4">
+            <div className="flex gap-2 w-1/3 items-center">
+              <h3 className="text-gray-500 text-lg">M</h3>
+              <input
+                type="number"
+                className="text-gray-500 outline-none text-lg w-full rounded-md px-2 py-1 bg-app-dark-tokenSelect placeholder-gray-500"
+                max={12}
+                placeholder="1"
+              />
+            </div>
+            <div className="flex gap-2 w-1/3 items-center">
+              <h3 className="text-gray-500 text-lg">D</h3>
+              <input
+                type="number"
+                className="text-gray-500 outline-none text-lg w-full rounded-md px-2 py-1 bg-app-dark-tokenSelect placeholder-gray-500"
+                placeholder="1"
+                max={31}
+              />
+            </div>
+            <div className="flex gap-2 w-1/3 items-center">
+              <h3 className="text-gray-500 text-lg">Y</h3>
+              <input
+                type="number"
+                className="text-gray-500 outline-none text-lg w-full rounded-md px-2 py-1 bg-app-dark-tokenSelect placeholder-gray-500"
+                placeholder="1"
+              />
+            </div>
+          </div>
+          <div className="bg-app-dark-button flex justify-center w-full font-semibold text-xl py-5 rounded-full text-app-dark-button hover:cursor-pointer active:bg-violet-700 active:text-violet-400">Send Proposal</div>
         </div>
       </div>
     </div>

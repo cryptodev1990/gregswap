@@ -4,7 +4,6 @@ import { useAppContext } from "../contexts/AppContext";
 // import axios from "axios";
 
 const SelectFirstTokenModal = ({ showModal, setShowModal }) => {
-
   const context = useAppContext();
   // const [coinDatas, setCoinDatas] = useState([]);
 
@@ -78,7 +77,14 @@ const SelectFirstTokenModal = ({ showModal, setShowModal }) => {
                 <div className="flex flex-col gap-3 w-full h-96 overflow-auto">
                   {coinDatas.map((coinData, idx) => {
                     return (
-                      <div className="flex gap-5" onClick={() => context.setFirstToken(idx)}>
+                      <div
+                        className="flex gap-5 hover:cursor-pointer"
+                        onClick={() => {
+                          context.setFirstToken(coinData.id - 1);
+                          setShowModal(false);
+                        }}
+                        key={idx}
+                      >
                         <img
                           className="w-12 h-12"
                           src={coinData.image}

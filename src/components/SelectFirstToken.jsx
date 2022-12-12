@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import SelectFirstTokenModal from "./SelectFirstTokenModal";
-import SelectSecondTokenModal from "./SelectFirstTokenModal";
 import { coinDatas } from "../Data/coindata";
 
-const SelectToken = ({ token }) => {
+const SelectFirstToken = ({ token }) => {
   const [showModal, setShowModal] = useState(false);
 
   return (
@@ -33,14 +32,8 @@ const SelectToken = ({ token }) => {
           setShowModal={setShowModal}
         />
       }
-      {
-        <SelectSecondTokenModal
-          showModal={showModal}
-          setShowModal={setShowModal}
-        />
-      }
     </>
   );
 };
 
-export default SelectToken;
+export default SelectFirstToken;

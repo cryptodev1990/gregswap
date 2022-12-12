@@ -21,7 +21,17 @@ module.exports = {
             button: "#487ced",
           }
         }
-      }
+      },
+      borderColor: {
+        app: {
+          dark: {
+            DEFAULT: "#1b2236",
+          }
+        }
+      },
+      borderWidth: {
+        1: '1px',
+      },
     },
   },
   plugins: [],

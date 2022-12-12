@@ -1,8 +1,11 @@
 import React from "react";
 import { coinDatas } from "../Data/coindata";
+import { useAppContext } from "../contexts/AppContext";
 // import axios from "axios";
 
 const SelectTokenModal = ({ showModal, setShowModal }) => {
+
+  const context = useAppContext();
   // const [coinDatas, setCoinDatas] = useState([]);
 
   // useEffect(() => {
@@ -28,15 +31,15 @@ const SelectTokenModal = ({ showModal, setShowModal }) => {
               onClick={() => setShowModal(false)}
             ></div>
             <div className="flex items-center px-4 py-6 min-h-screen">
-              <div className="relative flex flex-col w-full max-w-xl items-center mx-auto bg-app-dark-swap rounded-xl shadow-lg px-2 pt-3">
-                <div className="flex justify-between">
-                  <h3>Select a token</h3>
+              <div className="relative flex flex-col w-full max-w-md border-1 border-app-dark items-center mx-auto bg-app-dark-swap rounded-xl shadow-lg px-2 pt-3">
+                <div className="flex justify-between w-full items-center">
+                  <h3 className="text-xl px-3">Select a token</h3>
                   <h3
-                    className="text-gray-600"
+                    className="text-gray-600 hover:cursor-pointer"
                     onClick={() => setShowModal(false)}
                   >
                     <svg
-                      className="h-12 w-12 text-gray-600"
+                      className="h-10 w-10 text-gray-600"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
@@ -50,9 +53,9 @@ const SelectTokenModal = ({ showModal, setShowModal }) => {
                     </svg>
                   </h3>
                 </div>
-                <div className="px-2 py-1 gap-1 rounded-xl bg-app-dark-hover border-b-2 border-gray-500">
+                <div className="px-2 py-1 my-3 gap-3 rounded-xl bg-app-dark-hover border-1 border-gray-500 w-full flex">
                   <svg
-                    className="h-12 w-12 text-gray-600"
+                    className="h-8 w-8 text-gray-600"
                     width="24"
                     height="24"
                     viewBox="0 0 24 24"
@@ -68,15 +71,16 @@ const SelectTokenModal = ({ showModal, setShowModal }) => {
                     <line x1="21" y1="21" x2="15" y2="15" />
                   </svg>
                   <input
-                    className="bg-app-dark-hover placeholder-gray-700"
+                    className="bg-app-dark-hover placeholder-gray-500 text-gray-500 outline-none w-full text-lg"
                     placeholder="Search name or paste address"
                   />
                 </div>
-                <div className="flex flex-col gap-1">
-                  {coinDatas.map((coinData) => {
+                <div className="flex flex-col gap-3 w-full h-96 overflow-auto">
+                  {coinDatas.map((coinData, idx) => {
                     return (
-                      <div className="flex gap-2">
+                      <div className="flex gap-5" onClick={() => context.setSelectedToken(idx)}>
                         <img
+                          className="w-12 h-12"
                           src={coinData.image}
                           alt="cryptoImage"
                           title="coindataImage"

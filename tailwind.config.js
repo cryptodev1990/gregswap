@@ -11,7 +11,7 @@ module.exports = {
             button: "#203059",
             hover: "#131a2a",
             tokenSelect: "#293249",
-            swap: '#0d111c',
+            swap: '#0d111c'
           }
         }
       },

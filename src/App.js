@@ -1,6 +1,8 @@
 import './App.css';
 import Header from "../src/components/Header";
 import Proposal from './pages/Proposal';
+import Inbox from './pages/Inbox';
+import Withdraw from './pages/Withdraw';
 import { Routes, Route } from "react-router-dom";
 
 function App() {
@@ -9,8 +11,8 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Proposal />} />
-        {/* <Route path="/inbox" element={<></>} />
-        <Route path="/withdraw" element={<></>} /> */}
+        <Route path="/inbox" element={<Inbox />} />
+        <Route path="/withdraw" element={<Withdraw />} />
       </Routes>
     </div>
   );

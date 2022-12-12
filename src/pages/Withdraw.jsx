@@ -9,7 +9,7 @@ const Inbox = () => {
           className="outline-none placeholder-gray-500 text-lg w-1/2 text-gray-500 bg-app-dark-tokenSelect py-2 px-4 rounded-full"
           placeholder="1"
         />
-        <button className="bg-app-dark-button px-8 py-2 w-1/2 rounded-full text-app-dark-button text-lg font-bold active:text-blue-600 active:bg-blue-500">Sign</button>
+        <button className="bg-app-dark-button px-8 py-2 w-1/2 rounded-full text-app-dark-button text-lg font-bold active:text-blue-600 active:bg-blue-500">Withdraw</button>
       </div>
     </div>
   );

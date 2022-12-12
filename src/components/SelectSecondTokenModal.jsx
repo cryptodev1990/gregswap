@@ -3,7 +3,7 @@ import { coinDatas } from "../Data/coindata";
 import { useAppContext } from "../contexts/AppContext";
 // import axios from "axios";
 
-const SelectTokenModal = ({ showModal, setShowModal }) => {
+const SelectSecondTokenModal = ({ showModal, setShowModal }) => {
 
   const context = useAppContext();
   // const [coinDatas, setCoinDatas] = useState([]);
@@ -78,7 +78,7 @@ const SelectTokenModal = ({ showModal, setShowModal }) => {
                 <div className="flex flex-col gap-3 w-full h-96 overflow-auto">
                   {coinDatas.map((coinData, idx) => {
                     return (
-                      <div className="flex gap-5" onClick={() => context.setSelectedToken(idx)}>
+                      <div className="flex gap-5" onClick={() => context.setSecondToken(idx)}>
                         <img
                           className="w-12 h-12"
                           src={coinData.image}
@@ -102,4 +102,4 @@ const SelectTokenModal = ({ showModal, setShowModal }) => {
   );
 };
 
-export default SelectTokenModal;
+export default SelectSecondTokenModal;

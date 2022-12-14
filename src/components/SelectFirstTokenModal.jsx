@@ -25,7 +25,9 @@ const SelectFirstTokenModal = ({ showModal, setShowModal }) => {
   useEffect(() => {
     console.log(search);
     setTempCoins(
-      coinDatas.filter((coinData) => (new RegExp(search, 'i')).test(coinData.name))
+      coinDatas.filter((coinData) =>
+        new RegExp(search, "i").test(coinData.name)
+      )
     );
   }, [search]);
 
@@ -42,7 +44,10 @@ const SelectFirstTokenModal = ({ showModal, setShowModal }) => {
           <div className="fixed inset-0 z-10 overflow-x-auto">
             <div
               className="fixed inset-0 w-full h-full opacity-40"
-              onClick={() => setShowModal(false)}
+              onClick={() => {
+                setShowModal(false);
+                setSearch("");
+              }}
             ></div>
             <div className="flex items-center px-4 py-6 min-h-screen">
               <div className="relative flex flex-col w-full max-w-md border-1 border-app-dark items-center mx-auto bg-app-dark-swap rounded-xl shadow-lg px-2 pt-3">
@@ -50,7 +55,10 @@ const SelectFirstTokenModal = ({ showModal, setShowModal }) => {
                   <h3 className="text-xl px-3">Select a token</h3>
                   <h3
                     className="text-gray-600 hover:cursor-pointer"
-                    onClick={() => setShowModal(false)}
+                    onClick={() => {
+                      setShowModal(false);
+                      setSearch("");
+                    }}
                   >
                     <svg
                       className="h-10 w-10 text-gray-600"
@@ -100,6 +108,7 @@ const SelectFirstTokenModal = ({ showModal, setShowModal }) => {
                         onClick={() => {
                           context.setFirstToken(coinData.id - 1);
                           setShowModal(false);
+                          setSearch("");
                         }}
                         key={idx}
                       >

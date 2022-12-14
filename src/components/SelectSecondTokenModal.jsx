@@ -23,7 +23,6 @@ const SelectSecondTokenModal = ({ showModal, setShowModal }) => {
   // }, []);
 
   useEffect(() => {
-    console.log(search);
     setTempCoins(
       coinDatas.filter((coinData) =>
         new RegExp(search, "i").test(coinData.name)

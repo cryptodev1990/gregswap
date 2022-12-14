@@ -23,7 +23,6 @@ const SelectFirstTokenModal = ({ showModal, setShowModal }) => {
   // }, []);
 
   useEffect(() => {
-    console.log(search);
     setTempCoins(
       coinDatas.filter((coinData) =>
         new RegExp(search, "i").test(coinData.name)
@@ -34,8 +33,6 @@ const SelectFirstTokenModal = ({ showModal, setShowModal }) => {
   const onChange = (e) => {
     setSearch(e.target.value);
   };
-
-  console.log(tempCoins);
 
   return (
     <>

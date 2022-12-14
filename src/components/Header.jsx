@@ -81,7 +81,7 @@ const Header = () => {
       </div>
       <button  
         onClick={handleConnect}
-        className="bg-app-dark-button px-8 py-2 rounded-full text-app-dark-button 
+        className="hidden md:flex bg-app-dark-button px-8 py-2 rounded-full text-app-dark-button 
                     text-lg font-bold active:text-blue-600 active:bg-blue-500"
         >
         {content}
@@ -109,7 +109,7 @@ const Header = () => {
           />
 
           <Navbarbutton
-            content="Inbox"
+            content="Sign"
             clicked={id === 2}
             handleClick={InboxHambugerClick}
           />

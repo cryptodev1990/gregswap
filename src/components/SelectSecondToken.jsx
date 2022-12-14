@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import SelectSecondTokenModal from "./SelectSecondTokenModal";
 import { coinDatas } from "../Data/coindata";
 
-const SelectSecondToken = ({ token }) => {
+const SelectSecondToken = ({ token, setAmount }) => {
   const [showModal, setShowModal] = useState(false);
 
   return (
@@ -13,18 +13,19 @@ const SelectSecondToken = ({ token }) => {
           placeholder="0"
           className="text-3xl font-semibold placeholder-gray-600 bg-app-dark-hover outline-none text-gray-600 w-1/2"
           min="0"
+          onChange={(e) => setAmount(e.target.value)}
         />
         <div
           className="flex gap-1 py-2 px-4 hover:cursor-pointer bg-app bg-app-dark-tokenSelect rounded-full"
           onClick={() => setShowModal(true)}
         >
           <img
-            src={coinDatas[token].image}
+            src={token.image}
             alt="tokenImage"
             title="tokenImage"
             className="h-8 w-8"
           />
-          <h5 className="text-lg font-bold">{coinDatas[token].symbol}</h5>
+          <h5 className="text-lg font-bold">{token.symbol}</h5>
         </div>
       </div>
       {

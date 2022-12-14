@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import Navbarbutton from "./Navbarbutton";
 import { useNavigate } from "react-router-dom";
+import Iconmenu from "../assets/menu.svg";
 
 const Header = () => {
   const naviagte = useNavigate();
 
   const [content, setContent] = useState("Connect");
+  const [openMenu, setOpenMenu] = useState(false);
   const [id, setId] = useState(1);
 
   const ProposalClick = () => {
@@ -13,9 +15,21 @@ const Header = () => {
     naviagte("/");
   };
 
+  const ProposalHambugerClick = () => {
+    setId(1);
+    naviagte("/");
+    setOpenMenu(false);
+  };
+
   const InboxClick = () => {
     setId(2);
     naviagte("/inbox");
+  };
+
+  const InboxHambugerClick = () => {
+    setId(2);
+    naviagte("/inbox");
+    setOpenMenu(false);
   };
 
   const WithdrawClick = () => {
@@ -23,9 +37,15 @@ const Header = () => {
     naviagte("/withdraw");
   };
 
+  const WithdrawHambugerClick = () => {
+    setId(3);
+    naviagte("/withdraw");
+    setOpenMenu(false);
+  };
+
   return (
     <div className="flex justify-between">
-      <div className="flex gap-8 items-center">
+      <div className="hidden md:flex gap-8 items-center">
         <h1 className="text-2xl mr-10">GCN</h1>
         <Navbarbutton
           content="Proposal"
@@ -43,9 +63,51 @@ const Header = () => {
           handleClick={WithdrawClick}
         />
       </div>
-      <button className="bg-app-dark-button px-8 py-2 rounded-full text-app-dark-button text-lg font-bold active:text-blue-600 active:bg-blue-500">
+      <button className="bg-app-dark-button hidden md:flex px-8 py-2 rounded-full text-app-dark-button text-lg font-bold active:text-blue-600 active:bg-blue-500">
         {content}
       </button>
+      <div className="md:hidden flex" onClick={() => setOpenMenu(!openMenu)}>
+        <img src={Iconmenu} alt="menu" title="menu" />
+      </div>
+      <div
+        className={
+          (openMenu ? "-translate-x-0" : "translate-x-full") +
+          " fixed top-0 right-0 w-screen h-full z-50 bg-black bg-opacity-80 transform shadow-lg shadow-white duration-200"
+        }
+      >
+        <div
+          className="h-36 flex bg-black items-center pr-10 justify-end"
+          onClick={() => setOpenMenu(!openMenu)}
+        >
+          <p className="text-5xl cursor-pointer text-white">X</p>
+        </div>
+        <div className="flex flex-col w-full justify-center items-center gap-8 pt-10">
+          <Navbarbutton
+            content="Proposal"
+            clicked={id === 1}
+            handleClick={ProposalHambugerClick}
+          />
+
+          <Navbarbutton
+            content="Inbox"
+            clicked={id === 2}
+            handleClick={InboxHambugerClick}
+          />
+          <Navbarbutton
+            content="Withdraw"
+            clicked={id === 3}
+            handleClick={WithdrawHambugerClick}
+          />
+          <button
+            className="bg-app-dark-button px-8 py-2 rounded-full text-app-dark-button text-lg font-bold active:text-blue-600 active:bg-blue-500"
+            onClick={() => {
+              setOpenMenu(false);
+            }}
+          >
+            {content}
+          </button>
+        </div>
+      </div>
     </div>
   );
 };

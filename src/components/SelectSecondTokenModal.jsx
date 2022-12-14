@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { coinDatas } from "../Data/coindata";
 import { useAppContext } from "../contexts/AppContext";
 // import axios from "axios";
 
 const SelectSecondTokenModal = ({ showModal, setShowModal }) => {
   const context = useAppContext();
+  const [search, setSearch] = useState("");
+  const [tempCoins, setTempCoins] = useState(coinDatas);
   // const [coinDatas, setCoinDatas] = useState([]);
 
   // useEffect(() => {
@@ -19,6 +21,17 @@ const SelectSecondTokenModal = ({ showModal, setShowModal }) => {
   //       console.log(err);
   //     });
   // }, []);
+
+  useEffect(() => {
+    console.log(search);
+    setTempCoins(
+      coinDatas.filter((coinData) => (new RegExp(search, 'i')).test(coinData.name))
+    );
+  }, [search]);
+
+  const onChange = (e) => {
+    setSearch(e.target.value);
+  };
 
   return (
     <>
@@ -72,13 +85,16 @@ const SelectSecondTokenModal = ({ showModal, setShowModal }) => {
                   <input
                     className="bg-app-dark-hover placeholder-gray-500 text-gray-500 outline-none w-full text-lg"
                     placeholder="Search name or paste address"
+                    onChange={onChange}
+                    value={search}
                   />
                 </div>
                 <div className="flex flex-col gap-3 w-full h-96 overflow-auto">
-                  {coinDatas.map((coinData, idx) => {
+                  {tempCoins.map((coinData, idx) => {
                     return (
                       <div
                         className="flex gap-5 hover:cursor-pointer"
+                        key={idx}
                         onClick={() => {
                           context.setSecondToken(idx);
                           setShowModal(false);

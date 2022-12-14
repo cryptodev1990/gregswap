@@ -25,7 +25,7 @@ const Header = () => {
 
   return (
     <div className="flex justify-between">
-      <div className="flex gap-8">
+      <div className="flex gap-8 items-center">
         <h1 className="text-2xl mr-10">GCN</h1>
         <Navbarbutton
           content="Proposal"

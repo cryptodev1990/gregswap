@@ -72,7 +72,7 @@ const Header = () => {
       <div
         className={
           (openMenu ? "-translate-x-0" : "translate-x-full") +
-          " fixed top-0 right-0 w-screen h-full z-50 bg-black bg-opacity-80 transform shadow-lg shadow-white duration-200"
+          " fixed top-0 right-0 w-screen h-full z-50 bg-black bg-opacity-80 transform duration-200"
         }
       >
         <div

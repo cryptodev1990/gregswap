@@ -8,7 +8,7 @@ const Navbarbutton = ({ content, clicked, handleClick }) => {
   }, [clicked]);
 
   return (
-    <div className={color + " text-xl hover:rounded-xl hover:p-2 hover:bg-app-dark-hover cursor-pointer"} onClick={handleClick}>{content}</div>
+    <div className={color + " text-xl hover:p-2 hover:rounded-full hover:bg-app-dark-hover cursor-pointer"} onClick={handleClick}>{content}</div>
   )
 };
 

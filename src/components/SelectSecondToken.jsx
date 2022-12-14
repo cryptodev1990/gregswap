@@ -7,11 +7,11 @@ const SelectSecondToken = ({ token }) => {
 
   return (
     <>
-      <div className="bg-app-dark-hover flex justify-between items-center py-3 px-2 rounded-xl">
+      <div className="bg-app-dark-hover flex justify-between items-center py-3 px-3 rounded-xl">
         <input
           type="number"
           placeholder="0"
-          className="text-2xl placeholder-gray-600 bg-app-dark-hover outline-none text-gray-600 w-1/2"
+          className="text-3xl font-semibold placeholder-gray-600 bg-app-dark-hover outline-none text-gray-600 w-1/2"
           min="0"
         />
         <div

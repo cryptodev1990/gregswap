@@ -23,9 +23,9 @@ const Proposal = () => {
               />
               <input
                 type="number"
-                className="text-gray-500 outline-none text-lg w-full rounded-md px-2 py-1 bg-app-dark-tokenSelect placeholder-gray-500"
+                className="text-gray-500 outline-none text-xl w-full rounded-md px-2 py-1 bg-app-dark-tokenSelect placeholder-gray-500"
                 placeholder="1"
-                min="0"
+                min="1"
               />
             </div>
             <div className="flex gap-2 w-1/2 items-center">
@@ -37,9 +37,9 @@ const Proposal = () => {
               />
               <input
                 type="number"
-                className="text-gray-500 outline-none text-lg w-full rounded-md px-2 py-1 bg-app-dark-tokenSelect placeholder-gray-500"
+                className="text-gray-500 outline-none text-xl w-full rounded-md px-2 py-1 bg-app-dark-tokenSelect placeholder-gray-500"
                 placeholder="1"
-                min="0"
+                min="1"
               />
             </div>
           </div>
@@ -47,10 +47,9 @@ const Proposal = () => {
             <h4 className="text-xl text-gray-400">Duration</h4>
             <input
               type="number"
-              className="text-gray-500 outline-none text-lg w-1/2 rounded-md px-3 py-1 bg-app-dark-tokenSelect placeholder-gray-500"
+              className="text-gray-500 outline-none text-xl w-1/2 rounded-md px-3 py-1 bg-app-dark-tokenSelect placeholder-gray-500"
               placeholder="1"
               min="0"
-
             />
           </div>
           <div className="bg-app-dark-button flex justify-center w-full font-semibold text-xl py-5 rounded-full text-app-dark-button hover:cursor-pointer active:bg-violet-700 active:text-violet-400">

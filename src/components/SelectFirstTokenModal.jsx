@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { coinDatas } from "../Data/coindata";
 import { useAppContext } from "../contexts/AppContext";
+import { getTokenInfo } from "../service/token";
+import { useWalletContext } from "../contexts/WalletConnector";
 // import axios from "axios";
 
 const SelectFirstTokenModal = ({ showModal, setShowModal }) => {
   const context = useAppContext();
   const [search, setSearch] = useState("");
   const [tempCoins, setTempCoins] = useState(coinDatas);
+  const [btnShow, setBtnShow] = useState(false);
+  const {provider} = useWalletContext();
   // const [coinDatas, setCoinDatas] = useState([]);
 
   // useEffect(() => {
@@ -30,6 +34,11 @@ const SelectFirstTokenModal = ({ showModal, setShowModal }) => {
     );
   }, [search]);
 
+  useEffect(()=>{
+    if(tempCoins.length ==0){
+      setBtnShow(true)
+    }
+  },[tempCoins])
   const onChange = (e) => {
     setSearch(e.target.value);
   };
@@ -103,7 +112,7 @@ const SelectFirstTokenModal = ({ showModal, setShowModal }) => {
                       <div
                         className="flex gap-5 hover:cursor-pointer"
                         onClick={() => {
-                          context.setFirstToken(coinData.id - 1);
+                          context.setFirstToken(coinData);
                           setShowModal(false);
                           setSearch("");
                         }}
@@ -122,6 +131,22 @@ const SelectFirstTokenModal = ({ showModal, setShowModal }) => {
                       </div>
                     );
                   })}
+                  {
+                    btnShow ?
+                    <div
+                      className="flex gap-5 hover:cursor-pointer items-center hover:bg-app-dark-hover"
+                      onClick={async () => {
+                        context.setFirstToken(await getTokenInfo(provider,search))
+                        setShowModal(false);
+                        setSearch("");
+                      }}
+                    >
+                      <div className="py-1 text-center w-full">
+                        Add Custom Token
+                      </div> 
+                    </div>:
+                    <></>
+                  }
                 </div>
               </div>
             </div>

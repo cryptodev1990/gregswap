@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Navbarbutton from "./Navbarbutton";
 import { useNavigate } from "react-router-dom";
+import { useWalletContext } from "../contexts/WalletConnector";
 
 const Header = () => {
   const naviagte = useNavigate();
-
+  const wallet = useWalletContext();
+  console.log(wallet.address)
   const [content, setContent] = useState("Connect");
   const [id, setId] = useState(1);
 
@@ -23,6 +25,20 @@ const Header = () => {
     naviagte("/withdraw");
   };
 
+  const handleConnect = () => {
+    if (wallet.address == ""){
+      console.log('asdfafsd')
+      wallet.connect()
+    }
+    else {
+      wallet.disconnect();
+    }
+  };
+
+  useEffect(()=>{
+    if(!wallet.address) setContent("Connnect")
+    else setContent(wallet.address);
+  },[wallet.address]);
   return (
     <div className="flex justify-between">
       <div className="flex gap-8 items-center">
@@ -43,7 +59,11 @@ const Header = () => {
           handleClick={WithdrawClick}
         />
       </div>
-      <button className="bg-app-dark-button px-8 py-2 rounded-full text-app-dark-button text-lg font-bold active:text-blue-600 active:bg-blue-500">
+      <button  
+        onClick={handleConnect}
+        className="bg-app-dark-button px-8 py-2 rounded-full text-app-dark-button 
+                    text-lg font-bold active:text-blue-600 active:bg-blue-500"
+        >
         {content}
       </button>
     </div>

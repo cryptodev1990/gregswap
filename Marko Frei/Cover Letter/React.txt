@@ -1,0 +1,11 @@
+I am writing in regards to the React Developer opening that I saw on your company website. I am confident that I have the skills and experience that would make me the perfect candidate for the job.
+
+I have been working as a React Developer for the past eight years and have gained a lot of experience in the field. I am well-versed in all aspects of React development, from setting up the environment to creating components to using React with Redux. I am also familiar with webpack and other build tools.
+
+In addition to my React development skills, I am also an expert in HTML, CSS,  JavaScript and TypeScript. I have a deep understanding of the latest web development trends and technologies. I am confident that I can quickly adapt to new technologies and trends and can be a valuable asset to your team.
+
+I have attached my resume for your review and would be happy to answer any questions you may have. I look forward to hearing from you soon.
+
+Sincerely,
+
+Marko Frei

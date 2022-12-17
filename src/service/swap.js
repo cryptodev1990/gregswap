@@ -15,6 +15,7 @@ export const createSwap = async (provider, data)=>{
         console.log("---------------",tokenA, tokenB, creator, 
             swapAddress, amountA, amountB, 
             expiredTime, swapId);
+        console.log(Number(swapId))
         alert("created swapId is ",Number(swapId))
     });
     console.log(aa)

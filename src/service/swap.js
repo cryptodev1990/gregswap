@@ -16,7 +16,7 @@ export const createSwap = async (provider, data)=>{
             swapAddress, amountA, amountB, 
             expiredTime, swapId);
         console.log(Number(swapId))
-        alert("created swapId is ",Number(swapId).toString())
+        alert("successfully created",Number(swapId).toString())
     });
     console.log(aa)
 }
@@ -31,7 +31,7 @@ export const join = async (provider, swapId) =>{
     tokenContract.on("Joined", (swapId) => {
         console.log("joined SwapId:", swapId);
         console.log(Number(swapId))
-        alert("joined swapId is ",Number(swapId).toString())
+        alert("successfully Joined",Number(swapId).toString())
     });
     console.log(aa)
 }
@@ -46,7 +46,7 @@ export const withdraw = async (provider, swapId) =>{
     tokenContract.on("Withdrawed", (addr, swapId) => {
         console.log("withdrawed:", addr, swapId);
         console.log(Number(swapId))
-        alert("withdrawed swapId is ",Number(swapId).toString())
+        alert("successfully withdrawed! ",Number(swapId).toString())
     });
     console.log(aa)
 }

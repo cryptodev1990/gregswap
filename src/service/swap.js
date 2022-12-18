@@ -1,4 +1,4 @@
-import { ethers } from "ethers";
+import { BigNumber, ethers } from "ethers";
 import abi from "./swapAbi.json"
 export const createSwap = async (provider, data)=>{
     const swapAddress = process.env.REACT_APP_SWAP_ADDRESS;
@@ -40,8 +40,8 @@ export const withdraw = async (provider, swapId) =>{
     const swapAddress = process.env.REACT_APP_SWAP_ADDRESS;
     const signer = provider.getSigner();
     const tokenContract = new ethers.Contract(swapAddress, abi, signer);
-    
-    const result = await tokenContract.withdraw(swapId)
+    const id = ethers.BigNumber.from(swapId);
+    const result = await tokenContract.withdraw(id)
     const aa = result.wait();
     tokenContract.on("Withdrawed", (addr, swapId) => {
         console.log("withdrawed:", addr, swapId);

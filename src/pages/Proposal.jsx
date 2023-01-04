@@ -3,7 +3,6 @@ import SelectFirstToken from "../components/SelectFirstToken";
 import SelectSecondToken from "../components/SelectSecondToken";
 import { useAppContext } from "../contexts/AppContext";
 import { useWalletContext } from "../contexts/WalletConnector";
-import { coinDatas } from "../Data/coindata";
 import { createSwap } from "../service/swap";
 
 const Proposal = () => {

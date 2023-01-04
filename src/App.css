@@ -7,10 +7,10 @@
   pointer-events: none;
 }
 
-/* .hoverbackground {
+.hoverbackground {
   background-color: #131a2a;
   padding: auto;
-} */
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

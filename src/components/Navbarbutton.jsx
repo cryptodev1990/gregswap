@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import "../App.css";
 
 const Navbarbutton = ({ content, clicked, handleClick }) => {
   const [color, setColor] = useState("");
@@ -9,7 +8,7 @@ const Navbarbutton = ({ content, clicked, handleClick }) => {
   }, [clicked]);
 
   return (
-    <div className={color + " text-xl p-2 hover:hoverbackground rounded-xl hover:bg-app-dark-hover bg-app-dark-swap cursor-pointer"} onClick={handleClick}>{content}</div>
+    <div className={color + " text-xl p-2 rounded-xl hover:bg-app-dark-hover cursor-pointer"} onClick={handleClick}>{content}</div>
   )
 };
 

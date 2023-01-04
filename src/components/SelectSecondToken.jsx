@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import SelectSecondTokenModal from "./SelectSecondTokenModal";
-import { coinDatas } from "../Data/coindata";
 
 const SelectSecondToken = ({ token, setAmount }) => {
   const [showModal, setShowModal] = useState(false);

@@ -3,7 +3,6 @@ import { coinDatas } from "../Data/coindata";
 import { useAppContext } from "../contexts/AppContext";
 import { getTokenInfo } from "../service/token";
 import { useWalletContext } from "../contexts/WalletConnector";
-// import axios from "axios";
 
 const SelectFirstTokenModal = ({ showModal, setShowModal }) => {
   const context = useAppContext();
